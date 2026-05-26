@@ -834,7 +834,11 @@ export default function Home() {
       {/* CATEGORIES */}
       <div className="categories-grid">
         {categories.map((cat) => (
-          <Link key={cat.name} href="/tools" className="cat-card">
+          <Link
+            key={cat.name}
+            href={`/categories/${cat.name.toLowerCase().replace(" ", "-")}`}
+            className="cat-card"
+          >
             <span className="cat-emoji">{cat.emoji}</span>
             <span className="cat-name">{cat.name}</span>
             <span className="cat-count">{cat.count} tools</span>
