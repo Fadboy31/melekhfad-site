@@ -473,12 +473,12 @@ export default function BlogPage() {
       `}</style>
 
       <nav>
-        <a href="/" className="nav-logo">Melekh<span>Fad</span></a>
+        <Link href="/" className="nav-logo">Melekh<span>Fad</span></Link>
         <ul className="nav-links">
-          <li><a href="/tools">Tools</a></li>
-          <li><a href="/blog" className="active">Blog</a></li>
-          <li><a href="/newsletter">Newsletter</a></li>
-          <li><a href="/about">About</a></li>
+          <li><Link href="/tools">Tools</Link></li>
+          <li><Link href="/blog" className="active">Blog</Link></li>
+          <li><Link href="/newsletter">Newsletter</Link></li>
+          <li><Link href="/about">About</Link></li>
         </ul>
       </nav>
 

@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 
 const tools = [
@@ -673,12 +674,12 @@ export default function ToolsPage() {
       `}</style>
 
       <nav>
-        <a href="/" className="nav-logo">Melekh<span>Fad</span></a>
+        <Link href="/" className="nav-logo">Melekh<span>Fad</span></Link>
         <ul className="nav-links">
-          <li><a href="/tools" className="active">Tools</a></li>
-          <li><a href="/blog">Blog</a></li>
-          <li><a href="/newsletter">Newsletter</a></li>
-          <li><a href="/about">About</a></li>
+          <li><Link href="/tools" className="active">Tools</Link></li>
+          <li><Link href="/blog">Blog</Link></li>
+          <li><Link href="/newsletter">Newsletter</Link></li>
+          <li><Link href="/about">About</Link></li>
         </ul>
       </nav>
 

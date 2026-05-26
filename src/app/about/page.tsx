@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function AboutPage() {
   const skills = [
     { name: "HTML & CSS", level: 80, emoji: "🎨" },
@@ -509,12 +511,12 @@ export default function AboutPage() {
       `}</style>
 
       <nav>
-        <a href="/" className="nav-logo">Melekh<span>Fad</span></a>
+        <Link href="/" className="nav-logo">Melekh<span>Fad</span></Link>
         <ul className="nav-links">
-          <li><a href="/tools">Tools</a></li>
-          <li><a href="/blog">Blog</a></li>
-          <li><a href="/newsletter">Newsletter</a></li>
-          <li><a href="/about" className="active">About</a></li>
+          <li><Link href="/tools">Tools</Link></li>
+          <li><Link href="/blog">Blog</Link></li>
+          <li><Link href="/newsletter">Newsletter</Link></li>
+          <li><Link href="/about" className="active">About</Link></li>
         </ul>
       </nav>
 
@@ -654,8 +656,8 @@ export default function AboutPage() {
             this is the right place to start.
           </p>
           <div className="cta-buttons">
-            <a href="/tools" className="btn-primary">Explore AI Tools →</a>
-            <a href="/newsletter" className="btn-ghost">Join the Newsletter</a>
+            <Link href="/tools" className="btn-primary">Explore AI Tools →</Link>
+            <Link href="/newsletter" className="btn-ghost">Join the Newsletter</Link>
           </div>
         </div>
 

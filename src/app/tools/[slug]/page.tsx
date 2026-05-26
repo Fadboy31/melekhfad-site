@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import Link from "next/link";
 
 const tools = [
   {
@@ -485,19 +486,19 @@ export default async function ToolPage({
       `}</style>
 
       <nav>
-        <a href="/" className="nav-logo">Melekh<span>Fad</span></a>
+        <Link href="/" className="nav-logo">Melekh<span>Fad</span></Link>
         <ul className="nav-links">
-          <li><a href="/tools">Tools</a></li>
-          <li><a href="/blog">Blog</a></li>
-          <li><a href="/newsletter">Newsletter</a></li>
-          <li><a href="/about">About</a></li>
+          <li><Link href="/tools">Tools</Link></li>
+          <li><Link href="/blog">Blog</Link></li>
+          <li><Link href="/newsletter">Newsletter</Link></li>
+          <li><Link href="/about">About</Link></li>
         </ul>
       </nav>
 
       <div className="wrap">
         {/* BREADCRUMB */}
         <div className="breadcrumb">
-          <a href="/">Home</a> / <a href="/tools">Tools</a> / {tool.name}
+          <Link href="/">Home</Link> / <Link href="/tools">Tools</Link> / {tool.name}
         </div>
 
         {/* HERO */}
@@ -588,7 +589,7 @@ export default async function ToolPage({
         </a>
         <p className="affiliate-note">Free to sign up · No credit card required for free plan</p>
 
-        <a href="/tools" className="back-link">← Back to all tools</a>
+        <Link href="/tools" className="back-link">← Back to all tools</Link>
       </div>
 
       <footer>

@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Home() {
   const featuredTools = [
     {
@@ -773,13 +775,13 @@ export default function Home() {
 
       {/* NAV */}
       <nav>
-        <a href="/" className="nav-logo">Melekh<span>Fad</span></a>
+        <Link href="/" className="nav-logo">Melekh<span>Fad</span></Link>
         <ul className="nav-links">
-          <li><a href="/tools">Tools</a></li>
-          <li><a href="/blog">Blog</a></li>
-          <li><a href="/newsletter">Newsletter</a></li>
-          <li><a href="/about">About</a></li>
-          <li><a href="/newsletter" className="nav-cta">Subscribe Free</a></li>
+          <li><Link href="/tools">Tools</Link></li>
+          <li><Link href="/blog">Blog</Link></li>
+          <li><Link href="/newsletter">Newsletter</Link></li>
+          <li><Link href="/about">About</Link></li>
+          <li><Link href="/newsletter" className="nav-cta">Subscribe Free</Link></li>
         </ul>
       </nav>
 
@@ -802,8 +804,8 @@ export default function Home() {
         </p>
 
         <div className="hero-actions">
-          <a href="/tools" className="btn-primary">Explore 200+ Tools →</a>
-          <a href="/newsletter" className="btn-ghost">Get Weekly Picks</a>
+          <Link href="/tools" className="btn-primary">Explore 200+ Tools →</Link>
+          <Link href="/newsletter" className="btn-ghost">Get Weekly Picks</Link>
         </div>
 
         <div className="stats-bar">
@@ -832,11 +834,11 @@ export default function Home() {
       {/* CATEGORIES */}
       <div className="categories-grid">
         {categories.map((cat) => (
-          <a key={cat.name} href={`/tools/${cat.name.toLowerCase()}`} className="cat-card">
+          <Link key={cat.name} href="/tools" className="cat-card">
             <span className="cat-emoji">{cat.emoji}</span>
             <span className="cat-name">{cat.name}</span>
             <span className="cat-count">{cat.count} tools</span>
-          </a>
+          </Link>
         ))}
       </div>
 
@@ -847,12 +849,12 @@ export default function Home() {
             <div className="section-eyebrow">Hand-picked for you</div>
             <h2>Featured AI Tools</h2>
           </div>
-          <a href="/tools" className="view-all">View all tools →</a>
+          <Link href="/tools" className="view-all">View all tools →</Link>
         </div>
 
         <div className="tools-grid">
           {featuredTools.map((tool) => (
-            <a key={tool.name} href={tool.url} className="tool-card">
+            <Link key={tool.name} href="/tools" className="tool-card">
               <div className="tool-card-top">
                 <div className="tool-icon">{tool.emoji}</div>
                 <span
@@ -873,7 +875,7 @@ export default function Home() {
                 <span className="tool-price">{tool.price}</span>
                 <span className="tool-cta">Try it free →</span>
               </div>
-            </a>
+            </Link>
           ))}
         </div>
       </section>
@@ -939,11 +941,11 @@ export default function Home() {
       <footer>
         <div className="footer-logo">Melekh<span>Fad</span></div>
         <ul className="footer-links">
-          <li><a href="/tools">Tools</a></li>
-          <li><a href="/blog">Blog</a></li>
-          <li><a href="/newsletter">Newsletter</a></li>
-          <li><a href="/about">About</a></li>
-          <li><a href="/work-with-me">Work With Me</a></li>
+          <li><Link href="/tools">Tools</Link></li>
+          <li><Link href="/blog">Blog</Link></li>
+          <li><Link href="/newsletter">Newsletter</Link></li>
+          <li><Link href="/about">About</Link></li>
+          <li><Link href="/about">Work With Me</Link></li>
         </ul>
         <div className="footer-copy">© 2026 MelekhFad · Dar es Salaam, Tanzania</div>
       </footer>
