@@ -1,5 +1,28 @@
 import Link from "next/link";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "MelekhFad | AI Tools for African Students & Creators",
+  description:
+    "Discover the best AI tools for African students, creators, and entrepreneurs. Honest reviews, free tools, and practical guides from Dar es Salaam, Tanzania.",
+  openGraph: {
+    title: "MelekhFad | AI Tools for African Students & Creators",
+    description:
+      "Discover the best AI tools for African students, creators, and entrepreneurs. Honest reviews, free tools, and practical guides from Dar es Salaam, Tanzania.",
+    url: "https://melekhfad-site.vercel.app",
+    siteName: "MelekhFad",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "MelekhFad | AI Tools for African Students & Creators",
+    description:
+      "Discover the best AI tools for African students, creators, and entrepreneurs.",
+  },
+};
+
 export default function Home() {
   const featuredTools = [
     {

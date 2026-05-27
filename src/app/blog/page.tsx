@@ -1,3 +1,11 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Blog — AI Tool Reviews & Guides for Africa",
+  description:
+    "Honest AI tool reviews, comparisons, and practical guides written from Dar es Salaam for students and builders across Africa.",
+};
+
 import Link from "next/link";
 
 const posts = [

@@ -1,3 +1,11 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About MelekhFad — UDSM Student Building for African Youth",
+  description:
+    "MelekhFad is a journalism student at UDSM, web developer, video editor, and graphic designer from Dar es Salaam building Africa's best AI tools directory.",
+};
+
 import Link from "next/link";
 
 export default function AboutPage() {
