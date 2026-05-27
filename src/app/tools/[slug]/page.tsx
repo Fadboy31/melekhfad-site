@@ -1,5 +1,7 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import type { Metadata } from "next";
+import { directoryTools } from "@/lib/directory";
 
 const tools = [
   {
@@ -191,13 +193,82 @@ function StarRating({ rating }: { rating: number }) {
   );
 }
 
+function getToolReview(slug: string) {
+  const detailedTool = tools.find((t) => t.slug === slug);
+  if (detailedTool) return detailedTool;
+
+  const directoryTool = directoryTools.find((t) => t.slug === slug);
+  if (!directoryTool) return undefined;
+
+  return {
+    name: directoryTool.name,
+    slug: directoryTool.slug,
+    category: directoryTool.category,
+    emoji: directoryTool.emoji,
+    tagline: directoryTool.bestFor,
+    description: directoryTool.description,
+    pros: [
+      `Strong fit for ${directoryTool.bestFor.toLowerCase()}.`,
+      `Useful for ${directoryTool.audience.toLowerCase()}.`,
+      directoryTool.free
+        ? "Has a free plan or free starting point, which makes it easier to test before paying."
+        : "Focused paid product for users who are ready to invest in the workflow.",
+      "Simple enough to compare against other tools in the directory.",
+    ],
+    cons: [
+      "Pricing and feature limits can change, so confirm the latest details on the official site.",
+      "Best results still depend on clear prompts, examples, and a practical workflow.",
+      "May not be the best first pick if your needs sit outside its core category.",
+    ],
+    pricing: [
+      {
+        plan: directoryTool.price,
+        price: directoryTool.paid === "0" ? "$0/mo" : `From $${directoryTool.paid}/mo`,
+        features: directoryTool.free
+          ? "Free access or free tier available, with paid upgrades for heavier use."
+          : "Paid access for advanced users, teams, or professional workflows.",
+      },
+    ],
+    verdict: `${directoryTool.name} is worth testing if you need ${directoryTool.bestFor.toLowerCase()}. It earns a place in this directory because it has a clear audience, practical use cases, and enough value to compare against similar ${directoryTool.category.toLowerCase()} tools.`,
+    rating: directoryTool.free ? 4 : 4,
+    badge: directoryTool.badge,
+    badgeColor: directoryTool.badgeColor,
+    affiliateUrl: directoryTool.url,
+    africanNote: `Best for ${directoryTool.audience.toLowerCase()}. Start with the free option if available, then upgrade only when it becomes part of your regular study, content, freelance, or business workflow.`,
+  };
+}
+
+export function generateStaticParams() {
+  return directoryTools.map((tool) => ({ slug: tool.slug }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const tool = getToolReview(slug);
+
+  if (!tool) {
+    return {
+      title: "Tool Not Found",
+    };
+  }
+
+  return {
+    title: `${tool.name} Review`,
+    description: tool.description,
+  };
+}
+
 export default async function ToolPage({
   params,
 }: {
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const tool = tools.find((t) => t.slug === slug);
+  const tool = getToolReview(slug);
   if (!tool) notFound();
 
   return (

@@ -476,7 +476,7 @@ export default async function CategoryPage({ params }: Props) {
 
           <div className="tool-grid">
             {tools.map((tool) => (
-              <a key={tool.slug} href={tool.url} target="_blank" rel="noopener noreferrer" className="tool-card">
+              <Link key={tool.slug} href={`/tools/${tool.slug}`} className="tool-card">
                 <div className="tool-top">
                   <div className="tool-icon">{tool.emoji}</div>
                   <span
@@ -495,9 +495,9 @@ export default async function CategoryPage({ params }: Props) {
                 <p className="tool-fit"><strong>Best for:</strong> {tool.bestFor}</p>
                 <div className="tool-footer">
                   <span className="tool-price">{tool.price}</span>
-                  <span className="tool-cta">Visit tool {"->"}</span>
+                  <span className="tool-cta">Read review {"->"}</span>
                 </div>
-              </a>
+              </Link>
             ))}
           </div>
         </section>

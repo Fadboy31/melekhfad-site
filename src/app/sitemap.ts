@@ -20,7 +20,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.75,
   }));
 
-  const reviewedToolRoutes = directoryTools.slice(0, 5).map((tool) => ({
+  const reviewedToolRoutes = directoryTools.map((tool) => ({
     url: `${siteUrl}/tools/${tool.slug}`,
     lastModified: now,
     changeFrequency: "monthly" as const,

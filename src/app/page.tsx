@@ -836,7 +836,7 @@ export default function Home() {
         {categories.map((cat) => (
           <Link
             key={cat.name}
-            href={`/categories/${cat.name.toLowerCase().replace(" ", "-")}`}
+            href={`/categories/${cat.name.toLowerCase().replaceAll(" ", "-")}`}
             className="cat-card"
           >
             <span className="cat-emoji">{cat.emoji}</span>
@@ -858,7 +858,11 @@ export default function Home() {
 
         <div className="tools-grid">
           {featuredTools.map((tool) => (
-            <Link key={tool.name} href="/tools" className="tool-card">
+            <Link
+              key={tool.name}
+              href={`/tools/${tool.name.toLowerCase().replaceAll(" ", "-")}`}
+              className="tool-card"
+            >
               <div className="tool-card-top">
                 <div className="tool-icon">{tool.emoji}</div>
                 <span
@@ -877,7 +881,7 @@ export default function Home() {
               <div className="tool-desc">{tool.description}</div>
               <div className="tool-footer">
                 <span className="tool-price">{tool.price}</span>
-                <span className="tool-cta">Try it free →</span>
+                <span className="tool-cta">Read review →</span>
               </div>
             </Link>
           ))}

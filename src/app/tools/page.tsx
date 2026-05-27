@@ -738,11 +738,9 @@ export default function ToolsPage() {
         <div className="tools-grid">
           {filtered.length > 0 ? (
             filtered.map((tool) => (
-              <a
+              <Link
                 key={tool.slug}
-                href={tool.url}
-                target="_blank"
-                rel="noopener noreferrer"
+                href={`/tools/${tool.slug}`}
                 className="tool-card"
               >
                 <div className="tool-top">
@@ -763,9 +761,9 @@ export default function ToolsPage() {
                 <div className="tool-desc">{tool.description}</div>
                 <div className="tool-footer">
                   <span className="tool-price">{tool.price}</span>
-                  <span className="tool-cta">Try it free →</span>
+                  <span className="tool-cta">Read review →</span>
                 </div>
-              </a>
+              </Link>
             ))
           ) : (
             <div className="empty">
