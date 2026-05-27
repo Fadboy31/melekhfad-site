@@ -1,11 +1,3 @@
-import type { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "AI Tools Directory — 200+ Tools Reviewed",
-  description:
-    "Browse 200+ AI tools reviewed for African students and creators. Filter by category, price, and use case. Find free AI tools that work in Tanzania and across Africa.",
-};
-
 "use client";
 
 import Link from "next/link";
