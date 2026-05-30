@@ -72,15 +72,14 @@ export async function POST(req: NextRequest) {
       }),
     });
 
-    if (!response.ok) {
-      const error = await response.json();
-      console.error("Resend error:", error);
-      return NextResponse.json(
-        { error: "Failed to send email. Please try again." },
-        { status: 500 }
-      );
-    }
-
+   if (!response.ok) {
+  const error = await response.json();
+  console.error("Resend error:", error);
+  return NextResponse.json(
+    { error: "Failed to send email. Please try again." },
+    { status: 500 }
+  );
+}
     return NextResponse.json(
       { success: true, message: "You're subscribed! Check your inbox." },
       { status: 200 }
