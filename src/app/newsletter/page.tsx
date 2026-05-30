@@ -1,3 +1,5 @@
+import SignupForm from "./SignupForm";
+
 import type { Metadata } from "next";
 import Link from "next/link";
 
@@ -452,10 +454,7 @@ export default function NewsletterPage() {
               Join the early list for weekly tool picks, comparison notes, and private
               launch updates as the directory grows into a micro-SaaS hub.
             </p>
-            <form className="form">
-              <input className="input" type="email" placeholder="your@email.com" />
-              <button className="btn-primary" type="submit">Join Free</button>
-            </form>
+         <SignupForm />
             <div className="fine-print">No spam. No noise. Useful picks only.</div>
 
             <div className="metrics">

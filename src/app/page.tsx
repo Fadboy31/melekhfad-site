@@ -434,15 +434,15 @@ export default function Home() {
 
         /* CATEGORIES */
         .categories-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-          gap: 0.75rem;
-          margin-bottom: 5rem;
-          max-width: 1200px;
-          margin-left: auto;
-          margin-right: auto;
-          padding: 0 2rem;
-        }
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 0.6rem;
+  margin-bottom: 5rem;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1rem;
+}
 
         .cat-card {
           background: var(--card-bg);
@@ -479,10 +479,10 @@ export default function Home() {
 
         /* TOOLS GRID */
         .tools-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-          gap: 1.2rem;
-        }
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+}
 
         .tool-card {
           background: rgba(255,255,255,0.02);
@@ -785,15 +785,26 @@ export default function Home() {
           to { opacity: 1; transform: translateY(0); }
         }
 
-        @media (max-width: 768px) {
-          nav { padding: 1rem 1.2rem; }
-          .nav-links { display: none; }
-          .about-strip { grid-template-columns: 1fr; gap: 1.5rem; }
-          .stat-divider { display: none; }
-          .stats-bar { gap: 1.5rem; }
-          footer { flex-direction: column; text-align: center; }
-          .footer-links { justify-content: center; }
-        }
+       @media (max-width: 768px) {
+  nav { padding: 1rem 1.2rem; }
+  .nav-links { display: none; }
+  .about-strip { grid-template-columns: 1fr; }
+  .stat-divider { display: none; }
+  .stats-bar { gap: 1.5rem; }
+  footer { flex-direction: column; text-align: center; }
+  .footer-links { justify-content: center; }
+  .categories-grid { grid-template-columns: repeat(4, 1fr); padding: 0 1rem; gap: 0.5rem; }
+  .cat-emoji { font-size: 1.3rem; }
+  .cat-name { font-size: 0.72rem; }
+  .cat-count { font-size: 0.65rem; }
+  .tools-grid { grid-template-columns: 1fr; }
+  .hero { padding: 6rem 1.2rem 3rem; }
+  .hero-actions { flex-direction: column; align-items: center; }
+  .btn-primary, .btn-ghost { width: 100%; text-align: center; }
+  .newsletter-form { flex-direction: column; }
+  .newsletter-input { width: 100%; }
+  h1 { font-size: 2.8rem; }
+}
       `}</style>
 
       {/* NAV */}
