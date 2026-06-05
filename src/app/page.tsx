@@ -1,3 +1,4 @@
+import SignupForm from "@/app/newsletter/SignupForm";
 import Link from "next/link";
 
 import type { Metadata } from "next";
@@ -969,12 +970,7 @@ export default function Home() {
           free resources, and practical guides — every week in your inbox.
         </p>
         <div className="newsletter-form">
-          <input
-            type="email"
-            placeholder="your@email.com"
-            className="newsletter-input"
-          />
-          <button className="btn-primary">Subscribe →</button>
+          <SignupForm />
         </div>
         <div className="newsletter-note">Free forever · Unsubscribe anytime · No spam</div>
       </div>
