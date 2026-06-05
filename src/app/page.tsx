@@ -809,15 +809,21 @@ export default function Home() {
       `}</style>
 
       {/* NAV */}
+<li><a href="/newsletter">Newsletter</a></li>
+<li><a href="/about">About</a></li>
+<li><a href="/work-with-me">Work With Me</a></li>
+<li><a href="/newsletter" className="nav-cta">Subscribe Free</a></li>
+
       <nav>
         <Link href="/" className="nav-logo">Melekh<span>Fad</span></Link>
         <ul className="nav-links">
-          <li><Link href="/tools">Tools</Link></li>
-          <li><Link href="/blog">Blog</Link></li>
-          <li><Link href="/newsletter">Newsletter</Link></li>
-          <li><Link href="/about">About</Link></li>
-          <li><Link href="/newsletter" className="nav-cta">Subscribe Free</Link></li>
-        </ul>
+  <li><Link href="/tools">Tools</Link></li>
+  <li><Link href="/blog">Blog</Link></li>
+  <li><Link href="/newsletter">Newsletter</Link></li>
+  <li><Link href="/about">About</Link></li>
+  <li><Link href="/work-with-me">Work With Me</Link></li>
+  <li><Link href="/newsletter" className="nav-cta">Subscribe Free</Link></li>
+</ul>
       </nav>
 
       {/* HERO */}
@@ -983,7 +989,7 @@ export default function Home() {
           <li><Link href="/blog">Blog</Link></li>
           <li><Link href="/newsletter">Newsletter</Link></li>
           <li><Link href="/about">About</Link></li>
-          <li><Link href="/about">Work With Me</Link></li>
+          <li><a href="/work-with-me">Work With Me</a></li>
         </ul>
         <div className="footer-copy">© 2026 MelekhFad · Dar es Salaam, Tanzania</div>
       </footer>
