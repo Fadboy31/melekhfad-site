@@ -1,3 +1,4 @@
+import { getAffiliateUrl } from "@/lib/affiliates";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import type { Metadata } from "next";
@@ -601,9 +602,9 @@ export default async function ToolPage({
         </div>
 
         {/* MAIN CTA */}
-        <a href={tool.affiliateUrl} target="_blank" rel="noopener noreferrer" className="affiliate-btn">
-          Try {tool.name} Free →
-        </a>
+        <a href={getAffiliateUrl(tool.slug)} target="_blank" rel="noopener noreferrer" className="affiliate-btn">
+  Try {tool.name} Free →
+</a>
         <p className="affiliate-note">Opens official website · Free to sign up</p>
 
         {/* DESCRIPTION */}
